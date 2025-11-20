@@ -20,6 +20,31 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Android files and emulator
+*.android/
+.android/
+*.avd/
+*.img
+*.ini
+*.lock
+*.keystore
+*.pub
+adbkey*
+debug.keystore*
+emu-*
+modem-*
+*_API_*
+AVD.conf
+bootcompleted.ini
+cache.img*
+config.ini
+analytics.settings
+
+# User directories that shouldn't be tracked
+C:/Users/
+/c:/Users/
+/Users/
+
 # Optional: Exclude APK file if too large for git
 # app-release.apk
 
