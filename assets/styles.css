@@ -1,0 +1,255 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hero Container */
+.hero-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Fallback background jika gambar tidak tersedia */
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    z-index: -2;
+}
+
+/* Background Overlay */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.05em;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    border: 2px solid transparent;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+    background: linear-gradient(135deg, #ff3742, #ff2d3a);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.download-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .download-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .download-btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .hero-container {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .download-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Animation */
+.hero-content {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-title {
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-description {
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.download-btn {
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow effect untuk title */
+.hero-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Particle effect (optional) */
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100px); }
+}

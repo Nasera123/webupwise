@@ -1,0 +1,31 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional: Exclude APK file if too large for git
+# app-release.apk
+
+# Optional: Exclude preview image if using placeholder
+# assets/app-preview.png
+
+# Temporary files
+*.tmp
+*.temp
