@@ -187,5 +187,5 @@ window.addEventListener('load', function() {
         heroContainer.style.backgroundImage = 'none';
     };
     
-    testImg.src = 'background.jpg';
+    testImg.src = 'assets/background.jpg';
 });
